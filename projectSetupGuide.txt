@@ -1,0 +1,71 @@
+Django Project Setup Guide
+==========================
+
+This guide outlines the steps to set up a Django project named `MultipleAppProject` with two apps: `userEnquiry` and `userList`.
+
+Requirements:
+-------------
+- Python 3.x installed
+- pip (Python package manager)
+- Internet connection to install dependencies
+
+Steps:
+------
+
+1. Verify Python and pip are installed:
+   -------------------------------------
+   Open Command Prompt and run:
+
+   python --version
+   pip --version
+
+2. Create and activate a virtual environment:
+   ------------------------------------------
+   python -m venv myworld
+
+   Activate the environment:
+   For Windows:
+       .\myworld\Scripts\activate
+   For macOS/Linux:
+       source myworld/bin/activate
+
+3. Install Django:
+   ----------------
+   pip install django
+
+4. Create a new Django project:
+   -----------------------------
+   django-admin startproject MultipleAppProject .
+
+   (The `.` at the end installs the project in the current directory)
+
+5. Start Django apps:
+   -------------------
+   python manage.py startapp userEnquiry
+   python manage.py startapp userList
+
+6. Register the apps in settings:
+   -------------------------------
+   Open `MultipleAppProject/settings.py` and add both apps to the `INSTALLED_APPS` list:
+
+   INSTALLED_APPS = [
+       ...
+       'userEnquiry',
+       'userList',
+   ]
+
+7. Run the development server:
+   ----------------------------
+   python manage.py runserver
+
+   Visit http://127.0.0.1:8000/ in your browser to see the Django welcome page.
+
+You're all set! ✅
+
+Next Steps:
+-----------
+- Define models in `userEnquiry/models.py` and `userList/models.py`
+- Run `python manage.py makemigrations` and `python manage.py migrate` to apply database changes
+- Create views, templates, and routes in each app
+
+Happy coding with Django! 🚀
